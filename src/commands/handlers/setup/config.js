@@ -1,17 +1,7 @@
-const mongoose = require("mongoose");
 const Guild = require("../../../schemas/guild");
 
 module.exports = async (subcommand, options, interaction) => {
   let guildProfile = await Guild.findOne({ guildId: interaction.guild.id });
-  if (!guildProfile) {
-    guildProfile = await new Guild({
-      _id: new mongoose.Types.ObjectId(),
-      guildId: interaction.guild.id,
-      name: interaction.guild.name,
-    });
-
-    await guildProfile.save().catch(console.error);
-  }
 
   switch (subcommand) {
     case "language":
