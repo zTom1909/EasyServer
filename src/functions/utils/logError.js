@@ -7,7 +7,7 @@ module.exports = () => {
     const errorMessage = `${timestamp} - ${error.stack || error}\n\n`;
     fs.writeFileSync(crashLogFilePath, errorMessage, (error) => {
       if (error)
-        console.error(`Error writing to crash log file: ${err.message}`);
+        console.error(`Error while creating the crash log file: ${err.message}`);
       else console.log(`Error logged to ${crashLogFilePath}`);
     });
   };
