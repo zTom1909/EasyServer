@@ -1,4 +1,5 @@
 require("dotenv").config();
+require("./functions/utils/logError")();
 const fs = require("fs");
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const { connect } = require("mongoose");
